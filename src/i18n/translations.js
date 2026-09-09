@@ -21,13 +21,17 @@ export const translations = {
     "app.offline": "Offline",
     "app.synced": "All synced",
     "app.loading": "Preparing your nutrition…",
-    "app.permissionError": "Supabase blocked the operation. Run the permissions migration included with the project.",
-    "app.cloudFallback": "We couldn't load the cloud copy, so we'll use the local copy.",
+    "app.permissionError":
+      "Supabase blocked the operation. Run the permissions migration included with the project.",
+    "app.cloudFallback":
+      "We couldn't load the cloud copy, so we'll use the local copy.",
     "app.localMigrated": "Your local data is now in your account.",
-    "app.localMigrationFailed": "We couldn't migrate it; your local copy is still safe.",
+    "app.localMigrationFailed":
+      "We couldn't migrate it; your local copy is still safe.",
     "app.firstLogin": "First sign-in",
     "app.foundLocal": "We found data on this device",
-    "app.migratePrompt": "Would you like to save it to your account? The local copy will remain available.",
+    "app.migratePrompt":
+      "Would you like to save it to your account? The local copy will remain available.",
     "app.saveToAccount": "Save to my account",
     "app.notNow": "Not now",
     "app.deleteFoodConfirm": "Remove “{name}” from history?",
@@ -42,7 +46,8 @@ export const translations = {
     "app.measurementDeleteFailed": "We couldn't remove the measurement.",
     "app.backupImported": "Backup imported successfully",
     "app.invalidBackup": "This file isn't a valid MesuMacros backup",
-    "app.clearConfirm": "Food, water, and measurements will be removed. Your account will stay active. Continue?",
+    "app.clearConfirm":
+      "Food, water, and measurements will be removed. Your account will stay active. Continue?",
     "app.trackingCleared": "Tracking data removed",
     "app.trackingClearFailed": "We couldn't remove the data.",
     "app.foodCopied": "Food copied",
@@ -129,11 +134,16 @@ export const translations = {
     "home.undo": "Undo",
     "home.nextStep": "Next best step",
     "home.recommendation": "Today's recommendation",
-    "home.insightEmpty": "Log a meal and we'll start giving you useful guidance.",
-    "home.insightProtein": "You need {amount} g more protein to get closer to your goal.",
-    "home.insightWater": "Your hydration is trailing your nutrition. A glass of water gets you closer to your goal.",
-    "home.insightCalories": "You've exceeded your energy goal today. Review history before planning the rest of the day.",
-    "home.insightBalanced": "You're well balanced. Keep it going and finish logging your day.",
+    "home.insightEmpty":
+      "Log a meal and we'll start giving you useful guidance.",
+    "home.insightProtein":
+      "You need {amount} g more protein to get closer to your goal.",
+    "home.insightWater":
+      "Your hydration is trailing your nutrition. A glass of water gets you closer to your goal.",
+    "home.insightCalories":
+      "You've exceeded your energy goal today. Review history before planning the rest of the day.",
+    "home.insightBalanced":
+      "You're well balanced. Keep it going and finish logging your day.",
     "home.lastSeven": "Last 7 days",
     "home.weeklyPace": "Your weekly pace",
     "home.viewProgress": "View progress →",
@@ -155,7 +165,8 @@ export const translations = {
     "log.quantity": "How many?",
     "log.serving": "Serving size",
     "log.totalWeight": "Total weight",
-    "log.weightHint": "You can correct the weight if your serving is different.",
+    "log.weightHint":
+      "You can correct the weight if your serving is different.",
     "log.addToLog": "+ Add to log",
     "log.noResults": "No foods match those filters.",
     "log.customEntry": "Custom entry",
@@ -180,7 +191,8 @@ export const translations = {
     "log.enterName": "Enter the food name.",
     "log.invalidAmount": "Amount must be greater than zero.",
     "log.sessionEnded": "Your session ended. Sign in again.",
-    "log.permissionFailed": "We couldn't save because of a Supabase permissions issue.",
+    "log.permissionFailed":
+      "We couldn't save because of a Supabase permissions issue.",
     "log.saveFailed": "We couldn't save the food. Try again.",
     "log.updated": "Changes saved successfully.",
     "log.saved": "Food saved successfully.",
@@ -194,17 +206,21 @@ export const translations = {
     "log.portion": "Serving",
     "mesu.button": "Search MESU foods",
     "mesu.title": "Search the full MESU catalog",
-    "mesu.subtitle": "Find foods, drinks, coffee, tea, and branded products from USDA FoodData Central.",
+    "mesu.subtitle":
+      "Find foods, drinks, coffee, tea, and branded products from USDA FoodData Central.",
     "mesu.queryPlaceholder": "e.g. black coffee, green tea, Starbucks…",
     "mesu.search": "Search MESU",
     "mesu.searching": "Searching…",
     "mesu.minChars": "Enter at least 2 characters.",
-    "mesu.noResults": "No complete nutrition results were found. Try a more specific name.",
-    "mesu.unavailable": "MESU search isn't connected yet. Deploy the included Supabase function and add the USDA secret.",
+    "mesu.noResults":
+      "No complete nutrition results were found. Try a more specific name.",
+    "mesu.unavailable":
+      "MESU search isn't connected yet. Deploy the included Supabase function and add the USDA secret.",
     "mesu.results": "{count} results",
     "mesu.resultPer100": "per 100 g",
     "mesu.select": "Select",
-    "mesu.powered": "Nutrition data from USDA FoodData Central. Results may vary by brand and preparation.",
+    "mesu.powered":
+      "Nutrition data from USDA FoodData Central. Results may vary by brand and preparation.",
     "history.range": "History range",
     "history.day": "Day",
     "history.sevenDays": "7 days",
@@ -238,7 +254,8 @@ export const translations = {
     "progress.week": "Week",
     "progress.month": "Month",
     "progress.readTitle": "How to read it",
-    "progress.readText": "Each axis compares your intake with your goal. Getting close to the dotted edge means reaching 100%.",
+    "progress.readText":
+      "Each axis compares your intake with your goal. Getting close to the dotted edge means reaching 100%.",
     "progress.balanceDays": "Well-balanced days",
     "progress.calorieAverage": "Calorie average",
     "progress.proteinAverage": "Protein average",
@@ -251,7 +268,8 @@ export const translations = {
     "progress.barGoal": "Each bar's marker shows your daily goal.",
     "progress.bodyTracking": "Body tracking",
     "progress.newMeasurement": "New measurement",
-    "progress.consistencyTip": "Measure under similar conditions for better comparisons.",
+    "progress.consistencyTip":
+      "Measure under similar conditions for better comparisons.",
     "progress.weight": "Weight",
     "progress.waist": "Waist",
     "progress.hip": "Hips",
@@ -267,14 +285,16 @@ export const translations = {
     "progress.noNotes": "No notes",
     "progress.deleteMeasurement": "Delete measurement",
     "progress.emptyMeasurementTitle": "No measurements yet",
-    "progress.emptyMeasurementText": "Add your weight or a measurement to start seeing changes.",
+    "progress.emptyMeasurementText":
+      "Add your weight or a measurement to start seeing changes.",
     "profile.yourAccount": "Your account",
     "profile.completeProfile": "Complete your profile",
     "profile.profileComplete": "Profile complete",
     "profile.personalInfo": "Personal information",
     "profile.personalizeGoals": "Details used to personalize your goals",
     "profile.autoSaved": "Saved automatically",
-    "profile.description": "These details help estimate your needs. You can always edit your goals manually.",
+    "profile.description":
+      "These details help estimate your needs. You can always edit your goals manually.",
     "profile.name": "Name",
     "profile.namePlaceholder": "Your name",
     "profile.age": "Age",
@@ -303,9 +323,12 @@ export const translations = {
     "profile.nutritionGoals": "Nutrition goals",
     "profile.useRecommendation": "Use recommendation",
     "profile.estimateAvailable": "Estimate available:",
-    "profile.maintenance": "approximately {calories} kcal for maintenance. Apply it and adjust as needed.",
-    "profile.completeForEstimate": "Complete age, sex, height, and weight to get a personalized estimate.",
-    "profile.healthNote": "Estimates are educational and don't replace medical or nutrition advice.",
+    "profile.maintenance":
+      "approximately {calories} kcal for maintenance. Apply it and adjust as needed.",
+    "profile.completeForEstimate":
+      "Complete age, sex, height, and weight to get a personalized estimate.",
+    "profile.healthNote":
+      "Estimates are educational and don't replace medical or nutrition advice.",
     "profile.experience": "Experience",
     "profile.preferences": "Preferences",
     "profile.appearance": "Appearance",
@@ -321,7 +344,8 @@ export const translations = {
     "profile.languageHelp": "Interface language",
     "profile.privacy": "Privacy",
     "profile.yourData": "Your data",
-    "profile.dataDescription": "Your account syncs with Supabase and also keeps a local copy to help if you lose connection.",
+    "profile.dataDescription":
+      "Your account syncs with Supabase and also keeps a local copy to help if you lose connection.",
     "profile.export": "Export backup",
     "profile.import": "Import backup",
     "profile.signOut": "Sign out",
@@ -336,9 +360,12 @@ export const translations = {
     "auth.recoverAccess": "Recover access",
     "auth.newPassword": "New password",
     "auth.loginDescription": "Sign in to continue tracking your progress.",
-    "auth.signupDescription": "Keep your foods, goals, and progress in one place.",
-    "auth.forgotDescription": "We'll email you a link to create a new password.",
-    "auth.recoveryDescription": "Choose a new password to protect your account.",
+    "auth.signupDescription":
+      "Keep your foods, goals, and progress in one place.",
+    "auth.forgotDescription":
+      "We'll email you a link to create a new password.",
+    "auth.recoveryDescription":
+      "Choose a new password to protect your account.",
     "auth.newAccount": "NEW ACCOUNT",
     "auth.name": "Name",
     "auth.email": "Email",
@@ -363,7 +390,8 @@ export const translations = {
     "auth.passwordUpdated": "Password updated. You can now sign in.",
     "auth.resetSent": "We sent a password reset link. Check your email.",
     "auth.updatedContinue": "Password updated. You can continue.",
-    "auth.resendGeneric": "If the account needs confirmation, you'll receive another email.",
+    "auth.resendGeneric":
+      "If the account needs confirmation, you'll receive another email.",
     "auth.ruleLength": "At least 8 characters",
     "auth.ruleUppercase": "One uppercase letter",
     "auth.ruleNumber": "One number",
@@ -371,13 +399,16 @@ export const translations = {
     "auth.confirmAccount": "Confirm your account",
     "auth.sentTo": "We sent a confirmation link to:",
     "auth.yourEmail": "your email",
-    "auth.confirmInstructions": "Open the email and select “Confirm my account” to finish signing up.",
+    "auth.confirmInstructions":
+      "Open the email and select “Confirm my account” to finish signing up.",
     "auth.resendIn": "Resend email in {seconds}s",
     "auth.resend": "Resend email",
     "auth.checkSpam": "If you don't see it, check Spam or Junk.",
     "auth.setupTitle": "Set up your connection",
-    "auth.setupMissing": "Supabase variables are missing. Copy `.env.example` to `.env.local`, add the URL and public key, then restart Vite.",
-    "auth.setupSafe": "This setup screen prevents a blank page during development.",
+    "auth.setupMissing":
+      "Supabase variables are missing. Copy `.env.example` to `.env.local`, add the URL and public key, then restart Vite.",
+    "auth.setupSafe":
+      "This setup screen prevents a blank page during development.",
     "auth.invalidCredentials": "Check your email and password.",
     "auth.emailFailed": "We couldn't send the email. Try again.",
     "auth.genericError": "Something went wrong. Try again.",
@@ -385,10 +416,12 @@ export const translations = {
     "callback.ready": "Account ready",
     "callback.confirmed": "Account confirmed!",
     "callback.redirecting": "Taking you to MesuMacros.",
+    "callback.continue": "Continue to MesuMacros",
     "callback.failed": "Couldn't confirm",
     "callback.invalidTitle": "Invalid link",
     "callback.invalid": "The link is invalid or expired. Request a new email.",
-    "callback.confirmFailed": "We couldn't confirm the link. It may be expired or invalid.",
+    "callback.confirmFailed":
+      "We couldn't confirm the link. It may be expired or invalid.",
     "reset.title": "Create a new password",
     "reset.subtitle": "Enter and confirm your new password.",
     "reset.processingLink": "Processing the link…",
@@ -403,8 +436,9 @@ export const translations = {
     "reset.show": "Show",
     "reset.hide": "Hide",
     "error.title": "Something went wrong",
-    "error.text": "We couldn't display this screen. Your local data has not been deleted.",
-    "error.retry": "Try again"
+    "error.text":
+      "We couldn't display this screen. Your local data has not been deleted.",
+    "error.retry": "Try again",
   },
   es: {
     "language.english": "English",
@@ -428,13 +462,16 @@ export const translations = {
     "app.offline": "Sin conexión",
     "app.synced": "Todo sincronizado",
     "app.loading": "Preparando tu nutrición…",
-    "app.permissionError": "Supabase rechazó la operación. Ejecuta la migración de permisos incluida en el proyecto.",
+    "app.permissionError":
+      "Supabase rechazó la operación. Ejecuta la migración de permisos incluida en el proyecto.",
     "app.cloudFallback": "No pudimos cargar la nube; usaremos la copia local.",
     "app.localMigrated": "Tus datos locales ya están en tu cuenta.",
-    "app.localMigrationFailed": "No se pudieron migrar; la copia local sigue intacta.",
+    "app.localMigrationFailed":
+      "No se pudieron migrar; la copia local sigue intacta.",
     "app.firstLogin": "Primer inicio",
     "app.foundLocal": "Encontramos datos en este dispositivo",
-    "app.migratePrompt": "¿Quieres guardarlos en tu cuenta? La copia local se conservará.",
+    "app.migratePrompt":
+      "¿Quieres guardarlos en tu cuenta? La copia local se conservará.",
     "app.saveToAccount": "Guardar en mi cuenta",
     "app.notNow": "Ahora no",
     "app.deleteFoodConfirm": "¿Eliminar “{name}” del historial?",
@@ -449,7 +486,8 @@ export const translations = {
     "app.measurementDeleteFailed": "No pudimos eliminar la medición.",
     "app.backupImported": "Respaldo importado correctamente",
     "app.invalidBackup": "El archivo no es un respaldo válido de MesuMacros",
-    "app.clearConfirm": "Se eliminarán alimentos, agua y mediciones. Tu cuenta seguirá activa. ¿Continuar?",
+    "app.clearConfirm":
+      "Se eliminarán alimentos, agua y mediciones. Tu cuenta seguirá activa. ¿Continuar?",
     "app.trackingCleared": "Datos de seguimiento eliminados",
     "app.trackingClearFailed": "No pudimos eliminar los datos.",
     "app.foodCopied": "Alimento copiado",
@@ -536,11 +574,16 @@ export const translations = {
     "home.undo": "Deshacer",
     "home.nextStep": "Siguiente mejor paso",
     "home.recommendation": "Recomendación del día",
-    "home.insightEmpty": "Registra una comida y empezaremos a darte recomendaciones útiles.",
-    "home.insightProtein": "Te faltan {amount} g de proteína para acercarte a tu meta.",
-    "home.insightWater": "Tu hidratación va detrás de tu alimentación. Un vaso de agua te acerca a la meta.",
-    "home.insightCalories": "Hoy superaste tu meta energética. Mira el historial antes de ajustar el resto del día.",
-    "home.insightBalanced": "Vas equilibrado. Mantén el ritmo y completa el registro del día.",
+    "home.insightEmpty":
+      "Registra una comida y empezaremos a darte recomendaciones útiles.",
+    "home.insightProtein":
+      "Te faltan {amount} g de proteína para acercarte a tu meta.",
+    "home.insightWater":
+      "Tu hidratación va detrás de tu alimentación. Un vaso de agua te acerca a la meta.",
+    "home.insightCalories":
+      "Hoy superaste tu meta energética. Mira el historial antes de ajustar el resto del día.",
+    "home.insightBalanced":
+      "Vas equilibrado. Mantén el ritmo y completa el registro del día.",
     "home.lastSeven": "Últimos 7 días",
     "home.weeklyPace": "Tu ritmo semanal",
     "home.viewProgress": "Ver progreso →",
@@ -587,7 +630,8 @@ export const translations = {
     "log.enterName": "Escribe el nombre del alimento.",
     "log.invalidAmount": "La cantidad debe ser mayor que cero.",
     "log.sessionEnded": "Tu sesión terminó. Inicia sesión nuevamente.",
-    "log.permissionFailed": "No fue posible guardar por un problema de permisos en Supabase.",
+    "log.permissionFailed":
+      "No fue posible guardar por un problema de permisos en Supabase.",
     "log.saveFailed": "No pudimos guardar el alimento. Intenta nuevamente.",
     "log.updated": "Cambios guardados correctamente.",
     "log.saved": "Alimento guardado correctamente.",
@@ -601,17 +645,21 @@ export const translations = {
     "log.portion": "Porción",
     "mesu.button": "Buscar alimentos MESU",
     "mesu.title": "Buscar en todo el catálogo MESU",
-    "mesu.subtitle": "Encuentra alimentos, bebidas, café, té y productos de marca de USDA FoodData Central.",
+    "mesu.subtitle":
+      "Encuentra alimentos, bebidas, café, té y productos de marca de USDA FoodData Central.",
     "mesu.queryPlaceholder": "Ej. café negro, té verde, Starbucks…",
     "mesu.search": "Buscar en MESU",
     "mesu.searching": "Buscando…",
     "mesu.minChars": "Escribe al menos 2 caracteres.",
-    "mesu.noResults": "No encontramos resultados con nutrición completa. Prueba con un nombre más específico.",
-    "mesu.unavailable": "La búsqueda MESU aún no está conectada. Despliega la función de Supabase incluida y agrega el secreto de USDA.",
+    "mesu.noResults":
+      "No encontramos resultados con nutrición completa. Prueba con un nombre más específico.",
+    "mesu.unavailable":
+      "La búsqueda MESU aún no está conectada. Despliega la función de Supabase incluida y agrega el secreto de USDA.",
     "mesu.results": "{count} resultados",
     "mesu.resultPer100": "por 100 g",
     "mesu.select": "Seleccionar",
-    "mesu.powered": "Datos nutricionales de USDA FoodData Central. Los valores pueden variar según marca y preparación.",
+    "mesu.powered":
+      "Datos nutricionales de USDA FoodData Central. Los valores pueden variar según marca y preparación.",
     "history.range": "Rango del historial",
     "history.day": "Día",
     "history.sevenDays": "7 días",
@@ -645,7 +693,8 @@ export const translations = {
     "progress.week": "Semana",
     "progress.month": "Mes",
     "progress.readTitle": "Cómo leerlo",
-    "progress.readText": "Cada eje compara lo consumido con tu meta. Acercarte al borde punteado significa llegar al 100%.",
+    "progress.readText":
+      "Cada eje compara lo consumido con tu meta. Acercarte al borde punteado significa llegar al 100%.",
     "progress.balanceDays": "Días con buen balance",
     "progress.calorieAverage": "Promedio calórico",
     "progress.proteinAverage": "Promedio de proteína",
@@ -653,12 +702,14 @@ export const translations = {
     "progress.bodyTrend": "Tendencia corporal",
     "progress.weightEvolution": "Evolución del peso",
     "progress.latest": "Último registro",
-    "progress.needWeights": "Registra al menos dos pesos para ver una gráfica real.",
+    "progress.needWeights":
+      "Registra al menos dos pesos para ver una gráfica real.",
     "progress.dailyCalories": "Calorías diarias",
     "progress.barGoal": "La línea de cada barra marca tu meta diaria.",
     "progress.bodyTracking": "Seguimiento corporal",
     "progress.newMeasurement": "Nueva medición",
-    "progress.consistencyTip": "Mídete en condiciones similares para comparar mejor los cambios.",
+    "progress.consistencyTip":
+      "Mídete en condiciones similares para comparar mejor los cambios.",
     "progress.weight": "Peso",
     "progress.waist": "Cintura",
     "progress.hip": "Cadera",
@@ -674,14 +725,16 @@ export const translations = {
     "progress.noNotes": "Sin notas",
     "progress.deleteMeasurement": "Eliminar medición",
     "progress.emptyMeasurementTitle": "Aún no hay mediciones",
-    "progress.emptyMeasurementText": "Añade tu peso o una medida para empezar a ver cambios.",
+    "progress.emptyMeasurementText":
+      "Añade tu peso o una medida para empezar a ver cambios.",
     "profile.yourAccount": "Tu cuenta",
     "profile.completeProfile": "Completa tu perfil",
     "profile.profileComplete": "Perfil completo",
     "profile.personalInfo": "Información personal",
     "profile.personalizeGoals": "Datos para personalizar tus metas",
     "profile.autoSaved": "Guardado automático",
-    "profile.description": "Estos datos permiten estimar tus necesidades. Siempre puedes cambiar las metas manualmente.",
+    "profile.description":
+      "Estos datos permiten estimar tus necesidades. Siempre puedes cambiar las metas manualmente.",
     "profile.name": "Nombre",
     "profile.namePlaceholder": "Tu nombre",
     "profile.age": "Edad",
@@ -710,9 +763,12 @@ export const translations = {
     "profile.nutritionGoals": "Metas nutricionales",
     "profile.useRecommendation": "Usar recomendación",
     "profile.estimateAvailable": "Estimación disponible:",
-    "profile.maintenance": "mantenimiento aproximado de {calories} kcal. Puedes aplicarla y editarla.",
-    "profile.completeForEstimate": "Completa edad, sexo, altura y peso para obtener una estimación personalizada.",
-    "profile.healthNote": "Las estimaciones son orientativas y no sustituyen consejo médico o nutricional profesional.",
+    "profile.maintenance":
+      "mantenimiento aproximado de {calories} kcal. Puedes aplicarla y editarla.",
+    "profile.completeForEstimate":
+      "Completa edad, sexo, altura y peso para obtener una estimación personalizada.",
+    "profile.healthNote":
+      "Las estimaciones son orientativas y no sustituyen consejo médico o nutricional profesional.",
     "profile.experience": "Experiencia",
     "profile.preferences": "Preferencias",
     "profile.appearance": "Apariencia",
@@ -728,7 +784,8 @@ export const translations = {
     "profile.languageHelp": "Idioma de la interfaz",
     "profile.privacy": "Privacidad",
     "profile.yourData": "Tus datos",
-    "profile.dataDescription": "Tu cuenta se sincroniza con Supabase y también conserva una copia local para ayudarte si pierdes conexión.",
+    "profile.dataDescription":
+      "Tu cuenta se sincroniza con Supabase y también conserva una copia local para ayudarte si pierdes conexión.",
     "profile.export": "Exportar respaldo",
     "profile.import": "Importar respaldo",
     "profile.signOut": "Cerrar sesión",
@@ -743,9 +800,12 @@ export const translations = {
     "auth.recoverAccess": "Recupera tu acceso",
     "auth.newPassword": "Nueva contraseña",
     "auth.loginDescription": "Inicia sesión para continuar con tu progreso.",
-    "auth.signupDescription": "Guarda tus alimentos, metas y progreso en un solo lugar.",
-    "auth.forgotDescription": "Te enviaremos un enlace para crear una nueva contraseña.",
-    "auth.recoveryDescription": "Elige una contraseña nueva para proteger tu cuenta.",
+    "auth.signupDescription":
+      "Guarda tus alimentos, metas y progreso en un solo lugar.",
+    "auth.forgotDescription":
+      "Te enviaremos un enlace para crear una nueva contraseña.",
+    "auth.recoveryDescription":
+      "Elige una contraseña nueva para proteger tu cuenta.",
     "auth.newAccount": "NUEVA CUENTA",
     "auth.name": "Nombre",
     "auth.email": "Correo electrónico",
@@ -765,12 +825,16 @@ export const translations = {
     "auth.invalidEmail": "Escribe un correo válido.",
     "auth.passwordMismatch": "Las contraseñas no coinciden.",
     "auth.passwordLength": "La contraseña debe tener al menos ocho caracteres.",
-    "auth.acceptRequired": "Acepta los términos y la política de privacidad para continuar.",
-    "auth.requestFailed": "No pudimos completar la solicitud. Inténtalo de nuevo.",
+    "auth.acceptRequired":
+      "Acepta los términos y la política de privacidad para continuar.",
+    "auth.requestFailed":
+      "No pudimos completar la solicitud. Inténtalo de nuevo.",
     "auth.passwordUpdated": "Contraseña actualizada. Ya puedes iniciar sesión.",
-    "auth.resetSent": "Te enviamos un enlace para restablecer tu contraseña. Revisa tu correo.",
+    "auth.resetSent":
+      "Te enviamos un enlace para restablecer tu contraseña. Revisa tu correo.",
     "auth.updatedContinue": "Contraseña actualizada. Ya puedes continuar.",
-    "auth.resendGeneric": "Si la cuenta requiere confirmación, recibirás otro correo.",
+    "auth.resendGeneric":
+      "Si la cuenta requiere confirmación, recibirás otro correo.",
     "auth.ruleLength": "Al menos 8 caracteres",
     "auth.ruleUppercase": "Una letra mayúscula",
     "auth.ruleNumber": "Un número",
@@ -778,13 +842,16 @@ export const translations = {
     "auth.confirmAccount": "Confirma tu cuenta",
     "auth.sentTo": "Enviamos un enlace de confirmación a:",
     "auth.yourEmail": "tu correo electrónico",
-    "auth.confirmInstructions": "Abre el correo y presiona “Confirmar mi cuenta” para completar el registro.",
+    "auth.confirmInstructions":
+      "Abre el correo y presiona “Confirmar mi cuenta” para completar el registro.",
     "auth.resendIn": "Reenviar correo en {seconds}s",
     "auth.resend": "Reenviar el correo",
     "auth.checkSpam": "Si no lo ves, revisa Spam o Correo no deseado.",
     "auth.setupTitle": "Configura tu conexión",
-    "auth.setupMissing": "Faltan las variables de Supabase. Copia `.env.example` a `.env.local`, añade la URL y la clave pública, y reinicia Vite.",
-    "auth.setupSafe": "La aplicación muestra este estado para evitar una pantalla en blanco durante el desarrollo.",
+    "auth.setupMissing":
+      "Faltan las variables de Supabase. Copia `.env.example` a `.env.local`, añade la URL y la clave pública, y reinicia Vite.",
+    "auth.setupSafe":
+      "La aplicación muestra este estado para evitar una pantalla en blanco durante el desarrollo.",
     "auth.invalidCredentials": "Revisa tu correo y contraseña.",
     "auth.emailFailed": "No pudimos enviar el correo. Inténtalo de nuevo.",
     "auth.genericError": "Ocurrió un problema. Inténtalo de nuevo.",
@@ -792,14 +859,18 @@ export const translations = {
     "callback.ready": "Cuenta lista",
     "callback.confirmed": "¡Cuenta confirmada!",
     "callback.redirecting": "Te estamos llevando a MesuMacros.",
+    "callback.continue": "Continuar a MesuMacros",
     "callback.failed": "No se pudo confirmar",
     "callback.invalidTitle": "Enlace no válido",
-    "callback.invalid": "El enlace no es válido o ha expirado. Solicita un correo nuevo.",
-    "callback.confirmFailed": "No pudimos confirmar el enlace. Puede haber expirado o ser inválido.",
+    "callback.invalid":
+      "El enlace no es válido o ha expirado. Solicita un correo nuevo.",
+    "callback.confirmFailed":
+      "No pudimos confirmar el enlace. Puede haber expirado o ser inválido.",
     "reset.title": "Crear nueva contraseña",
     "reset.subtitle": "Escribe y confirma tu nueva contraseña.",
     "reset.processingLink": "Procesando el enlace…",
-    "reset.invalidLink": "Este enlace es inválido o ha expirado. Solicita uno nuevo.",
+    "reset.invalidLink":
+      "Este enlace es inválido o ha expirado. Solicita uno nuevo.",
     "reset.requestNew": "Solicitar un enlace nuevo",
     "reset.newPassword": "Nueva contraseña",
     "reset.confirmPassword": "Confirmar contraseña",
@@ -810,9 +881,10 @@ export const translations = {
     "reset.show": "Mostrar",
     "reset.hide": "Ocultar",
     "error.title": "Algo salió mal",
-    "error.text": "No pudimos mostrar esta pantalla. Tus datos locales no se han eliminado.",
-    "error.retry": "Reintentar"
-  }
+    "error.text":
+      "No pudimos mostrar esta pantalla. Tus datos locales no se han eliminado.",
+    "error.retry": "Reintentar",
+  },
 };
 
 export function translate(language, key, variables = {}) {

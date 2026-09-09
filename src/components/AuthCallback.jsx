@@ -21,9 +21,7 @@ export default function AuthCallback() {
       const callbackError =
         params.get("error_description") || hash.get("error_description");
       if (callbackError) {
-        setError(
-          t("callback.invalid"),
-        );
+        setError(t("callback.invalid"));
         setStatus("error");
         return;
       }
@@ -39,15 +37,10 @@ export default function AuthCallback() {
         if (result.error) throw result.error;
         if (cancelled) return;
         setStatus("success");
-        window.setTimeout(() => {
-          if (!cancelled) window.location.replace("/inicio");
-        }, 1500);
       } catch (callbackFailure) {
         if (import.meta.env.DEV) console.error(callbackFailure);
         if (!cancelled) {
-          setError(
-            t("callback.confirmFailed"),
-          );
+          setError(t("callback.confirmFailed"));
           setStatus("error");
         }
       }
@@ -57,6 +50,14 @@ export default function AuthCallback() {
       cancelled = true;
     };
   }, [auth, t]);
+
+  useEffect(() => {
+    if (status !== "success") return undefined;
+    const redirectTimer = window.setTimeout(() => {
+      window.location.replace("/");
+    }, 1500);
+    return () => window.clearTimeout(redirectTimer);
+  }, [status]);
 
   return (
     <main className="auth-shell">
@@ -76,6 +77,9 @@ export default function AuthCallback() {
             <span className="eyebrow">{t("callback.ready")}</span>
             <h1>{t("callback.confirmed")}</h1>
             <p className="muted">{t("callback.redirecting")}</p>
+            <a className="primary-button callback-link" href="/">
+              {t("callback.continue")}
+            </a>
           </>
         )}
         {status === "error" && (
