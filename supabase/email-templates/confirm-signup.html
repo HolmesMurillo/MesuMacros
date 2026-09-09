@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confirm your MesuMacros account</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      background: #f4f8f5;
+      color: #17231f;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      style="padding: 32px 12px; background: #f4f8f5"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="100%"
+            cellspacing="0"
+            cellpadding="0"
+            style="
+              max-width: 560px;
+              background: #ffffff;
+              border: 1px solid #e1eae5;
+              border-radius: 12px;
+              overflow: hidden;
+            "
+          >
+            <tr>
+              <td
+                style="
+                  padding: 28px 32px;
+                  background: #0b6044;
+                  color: #ffffff;
+                  font-size: 22px;
+                  font-weight: bold;
+                "
+              >
+                MesuMacros
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 36px 32px">
+                <p
+                  style="
+                    margin: 0 0 8px;
+                    color: #16825b;
+                    font-size: 12px;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                  "
+                >
+                  NUTRITION MADE SIMPLER · TU NUTRICIÓN, MÁS SIMPLE
+                </p>
+                <h1 style="margin: 0 0 16px; color: #17231f; font-size: 28px">
+                  Confirm your account
+                </h1>
+                <p style="font-size: 16px; line-height: 1.6">
+                  Thanks for creating your MesuMacros account. Confirm your
+                  email to save your food, goals, and progress.
+                </p>
+                <p style="font-size: 15px; line-height: 1.6; color: #70817a">
+                  Gracias por crear tu cuenta. Confirma tu correo para guardar
+                  tus alimentos, metas y progreso.
+                </p>
+                <p style="margin: 28px 0; text-align: center">
+                  <a
+                    href="{{ .ConfirmationURL }}"
+                    style="
+                      display: inline-block;
+                      padding: 14px 24px;
+                      background: #16825b;
+                      color: #ffffff;
+                      text-decoration: none;
+                      border-radius: 6px;
+                      font-weight: bold;
+                    "
+                    >Confirm my account / Confirmar mi cuenta</a
+                  >
+                </p>
+                <p style="font-size: 13px; line-height: 1.6; color: #70817a">
+                  If the button does not work, copy and paste this link into
+                  your browser. / Si el botón no funciona, copia y pega este
+                  enlace en tu navegador:
+                </p>
+                <p
+                  style="
+                    font-size: 12px;
+                    line-height: 1.5;
+                    word-break: break-all;
+                    color: #3275cf;
+                  "
+                >
+                  {{ .ConfirmationURL }}
+                </p>
+                <p
+                  style="
+                    margin: 24px 0 0;
+                    font-size: 13px;
+                    line-height: 1.6;
+                    color: #70817a;
+                  "
+                >
+                  If you did not create this account, you can ignore this
+                  message. / Si no creaste esta cuenta, puedes ignorarlo.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

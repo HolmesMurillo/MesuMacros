@@ -1,0 +1,25 @@
+.migration-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  background: rgba(17, 35, 28, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.migration-dialog {
+  width: min(100%, 450px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+  padding: 28px;
+  display: grid;
+  gap: 12px;
+}
+.migration-dialog h2 {
+  font-size: 22px;
+}
+.migration-dialog .data-actions {
+  margin-top: 8px;
+}
