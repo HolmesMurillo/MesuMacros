@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "node scripts/testUsdaCatalogUtils.mjs && node scripts/validateFoodCatalog.mjs && node scripts/testAnalytics.mjs && node scripts/testI18nAndServings.mjs && node scripts/testRadar.mjs",
+    "test": "node scripts/testUsdaCatalogUtils.mjs && node scripts/validateFoodCatalog.mjs && node scripts/testAnalytics.mjs && node scripts/testI18nAndServings.mjs && node scripts/testRadar.mjs && node scripts/testSupabaseSync.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
     "catalog:review": "node --env-file=.env.local scripts/buildFoodCatalog.mjs",

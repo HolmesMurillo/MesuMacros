@@ -341,7 +341,9 @@ export async function syncUserData(userId, data) {
   };
   const results = [
     await supabase.from("profiles").upsert(profile),
-    await supabase.from("nutrition_goals").upsert(goals),
+    await supabase
+      .from("nutrition_goals")
+      .upsert(goals, { onConflict: "user_id" }),
   ];
   results.push(
     ...(await Promise.all(
