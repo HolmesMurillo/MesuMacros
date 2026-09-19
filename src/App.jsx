@@ -10,6 +10,7 @@ import { useAuth } from "./context/authContext";
 import AuthScreen, { SupabaseSetup } from "./components/AuthScreen";
 import AuthCallback from "./components/AuthCallback";
 import ResetPassword from "./components/ResetPassword";
+import BetaPages, { BetaLinks } from "./components/BetaPages";
 import AppIcon from "./components/AppIcon";
 import HomePage from "./components/pages/HomePage";
 import LogPage from "./components/pages/LogPage";
@@ -41,6 +42,13 @@ function readableError(error, fallback, t) {
 
 export default function App() {
   const auth = useAuth();
+  const authRoute = ["/auth/callback", "/reset-password"].includes(window.location.pathname);
+  return <AccountApp key={authRoute ? "auth-flow" : auth.user?.id || "signed-out"} />;
+}
+
+function AccountApp() {
+  const auth = useAuth();
+  const userId = auth.user?.id;
   const { locale, setLanguage, t } = useLanguage();
   const tabs = useMemo(() => [
     ["home", t("nav.home"), "home"],
@@ -52,7 +60,7 @@ export default function App() {
   const demoMode = import.meta.env.DEV && new URLSearchParams(window.location.search).get("demo") === "1";
   const currentUser = auth.user || (demoMode ? { email: "demo@mesumacros.app" } : null);
   const [pathname, setPathname] = useState(window.location.pathname);
-  const [data, setData] = useState(loadData);
+  const [data, setData] = useState(() => loadData(auth.user?.id || "signed-out"));
   const [activeTab, setActiveTab] = useState("home");
   const [selectedDate, setSelectedDate] = useState(() => getLocalDateKey());
   const [notice, setNotice] = useState("");
@@ -61,11 +69,11 @@ export default function App() {
   const [remoteLoaded, setRemoteLoaded] = useState(false);
   const [migrationPrompt, setMigrationPrompt] = useState(false);
   const [syncState, setSyncState] = useState("saved");
-  const [legacyData] = useState(loadData);
+  // Unowned legacy caches must never be offered to a different account.
   const fileInput = useRef(null);
   const translatorRef = useRef(t);
   const today = getLocalDateKey();
-  const hasLegacyData = Boolean(legacyData.profile.name || legacyData.foods.length || legacyData.water.length || legacyData.measurements.length);
+  const hasLegacyData = false;
 
   useEffect(() => {
     const handleNavigation = () => setPathname(window.location.pathname);
@@ -73,7 +81,7 @@ export default function App() {
     return () => window.removeEventListener("popstate", handleNavigation);
   }, []);
 
-  useEffect(() => { saveData(data); }, [data]);
+  useEffect(() => { if (remoteLoaded || demoMode) saveData(data, auth.user?.id || "demo"); }, [data, auth.user?.id, remoteLoaded, demoMode]);
 
   useEffect(() => { translatorRef.current = t; }, [t]);
 
@@ -91,9 +99,9 @@ export default function App() {
   }, [data.profile.theme]);
 
   useEffect(() => {
-    if (!auth.user || !auth.configured) return undefined;
+    if (!userId || !auth.configured) return undefined;
     let cancelled = false;
-    loadUserData(auth.user.id)
+    loadUserData(userId)
       .then((remoteData) => {
         if (!cancelled) {
           setData(remoteData);
@@ -103,22 +111,21 @@ export default function App() {
       })
       .catch((error) => {
         if (!cancelled) {
-          setRemoteLoaded(true);
           setNotice(readableError(error, translatorRef.current("app.cloudFallback"), translatorRef.current));
         }
       });
     return () => { cancelled = true; };
-  }, [auth.user, auth.configured, hasLegacyData]);
+  }, [userId, auth.configured, hasLegacyData]);
 
   useEffect(() => {
-    if (!auth.user || !remoteLoaded) return undefined;
+    if (!userId || !remoteLoaded) return undefined;
     const timer = window.setTimeout(() => {
-      syncUserData(auth.user.id, data)
+      syncUserData(userId, data)
         .then(() => setSyncState("saved"))
         .catch(() => setSyncState("error"));
     }, 800);
     return () => window.clearTimeout(timer);
-  }, [auth.user, data, remoteLoaded]);
+  }, [userId, data, remoteLoaded]);
 
   const dayFoods = useMemo(() => data.foods.filter((food) => food.dateKey === selectedDate), [data.foods, selectedDate]);
   const totals = useMemo(() => sumNutrition(dayFoods), [dayFoods]);
@@ -211,9 +218,11 @@ export default function App() {
     } catch (error) { flash(readableError(error, t("app.trackingClearFailed"), t)); }
   }
 
+  if (["/privacy", "/terms", "/feedback"].includes(pathname)) return <BetaPages page={pathname} />;
   if (pathname === "/reset-password") return <ResetPassword />;
   if (pathname === "/auth/callback") return <AuthCallback />;
   if (!auth.configured && !demoMode) return <SupabaseSetup />;
+  if (!demoMode && auth.user && !remoteLoaded && notice) return <main className="auth-shell"><section className="auth-card"><div className="auth-panel"><p role="alert">{notice}</p><p>{locale.startsWith("es") ? "No se modificaron tus datos. Comprueba tu conexión y vuelve a cargar la página." : "Your data was not changed. Check your connection and reload the page."}</p><button onClick={() => window.location.reload()}>{locale.startsWith("es") ? "Reintentar" : "Retry"}</button><button onClick={auth.signOut}>{t("profile.signOut")}</button></div></section></main>;
   if (!demoMode && (auth.loading || (auth.user && !remoteLoaded))) return <main className="auth-shell"><LanguageToggle compact/><section className="auth-card auth-loading"><Brand /><div className="loading-orbit"/><p className="muted">{t("app.loading")}</p></section></main>;
   if (!currentUser) return <AuthScreen initialMode={pathname === "/register" ? "signup" : pathname === "/forgot" ? "forgot" : "login"} />;
 
@@ -240,6 +249,7 @@ export default function App() {
           <div className="top-actions"><LanguageToggle compact onChange={(next) => updateProfile({ language: next })}/><div className="top-date">{formatDateLabel(selectedDate, locale)}</div></div>
         </header>
         {notice && <div className="notice" role="status">{notice}</div>}
+        <BetaLinks />
         {activeTab === "home" && <HomePage data={data} selectedDate={selectedDate} setSelectedDate={setSelectedDate} today={today} foods={dayFoods} totals={totals} onRegister={() => navigate("log")} onHistory={() => navigate("history")} onProgress={() => navigate("progress")} onAddWater={addWater} onRemoveWater={removeWater} />}
         {activeTab === "log" && <LogPage selectedDate={selectedDate} editingFood={editingFood} setEditingFood={setEditingFood} showAdvanced={showAdvanced} setShowAdvanced={setShowAdvanced} saveFood={saveFood} />}
         {activeTab === "history" && <HistoryPage foods={data.foods} goals={data.goals} selectedDate={selectedDate} setSelectedDate={setSelectedDate} onEdit={(food) => { setEditingFood(food); navigate("log"); }} onDelete={removeFood} onCopy={(food) => saveFood({ ...food, id: undefined, user_id: undefined, legacy_id: undefined, dateKey: selectedDate, createdAt: undefined }).then(() => flash(t("app.foodCopied"))).catch((error) => flash(readableError(error, t("app.foodCopyFailed"), t)))} onRegister={() => navigate("log")} />}

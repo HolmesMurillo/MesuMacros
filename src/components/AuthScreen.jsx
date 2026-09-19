@@ -211,6 +211,8 @@ export default function AuthScreen({
                     onChange={(event) => setAccepted(event.target.checked)}
                   />{" "}
                   {t("auth.acceptTerms")}
+                  <a href="/terms" target="_blank" rel="noopener noreferrer">Terms / Términos</a>
+                  <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy / Privacidad</a>
                 </label>
               </>
             )}

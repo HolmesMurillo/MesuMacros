@@ -34,9 +34,9 @@ function cloneDefaults() {
   return JSON.parse(JSON.stringify(defaults));
 }
 
-export function loadData() {
+export function loadData(userId) {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const saved = JSON.parse(localStorage.getItem(userId ? `${STORAGE_KEY}:${userId}` : STORAGE_KEY));
     return saved
       ? {
           ...cloneDefaults(),
@@ -50,9 +50,9 @@ export function loadData() {
   }
 }
 
-export function saveData(data) {
+export function saveData(data, userId) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(userId ? `${STORAGE_KEY}:${userId}` : STORAGE_KEY, JSON.stringify(data));
     return true;
   } catch {
     return false;

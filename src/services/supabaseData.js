@@ -26,7 +26,7 @@ export async function loadUserData(userId) {
   );
   if (failed) throw failed.error;
   const [foodEntries, waterEntries, measurements] = collections;
-  const local = loadData();
+  const local = loadData(userId);
   return {
     ...local,
     profile: { ...local.profile, ...mapProfile(profile.data) },

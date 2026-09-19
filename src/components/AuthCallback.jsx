@@ -9,21 +9,19 @@ export default function AuthCallback() {
   const { t } = useLanguage();
   const [status, setStatus] = useState("loading");
   const [error, setError] = useState("");
-  const started = useRef(false);
+  const operation = useRef(null);
+  const initial = useRef({ auth, t });
 
   useEffect(() => {
     let cancelled = false;
     async function confirm() {
-      if (started.current) return;
-      started.current = true;
+      const { auth, t } = initial.current;
       const params = new URLSearchParams(window.location.search);
       const hash = new URLSearchParams(window.location.hash.slice(1));
       const callbackError =
         params.get("error_description") || hash.get("error_description");
       if (callbackError) {
-        setError(t("callback.invalid"));
-        setStatus("error");
-        return;
+        throw new Error(t("callback.invalid"));
       }
       try {
         let result = { error: null };
@@ -35,21 +33,29 @@ export default function AuthCallback() {
           result = await auth.verifyOtp(tokenHash, type);
         else if (!auth.session) result = await auth.refreshSession();
         if (result.error) throw result.error;
-        if (cancelled) return;
-        setStatus("success");
+        const session = result.data?.session || auth.session || (await auth.refreshSession()).data?.session;
+        if (!session) throw new Error(t("callback.confirmFailed"));
       } catch (callbackFailure) {
         if (import.meta.env.DEV) console.error(callbackFailure);
-        if (!cancelled) {
-          setError(t("callback.confirmFailed"));
-          setStatus("error");
-        }
+        throw callbackFailure;
       }
     }
-    confirm();
+    if (!operation.current) operation.current = confirm();
+    operation.current.then(() => {
+      if (!cancelled) {
+        window.history.replaceState({}, "", window.location.pathname);
+        setStatus("success");
+      }
+    }).catch(() => {
+      if (!cancelled) {
+        setError(initial.current.t("callback.confirmFailed"));
+        setStatus("error");
+      }
+    });
     return () => {
       cancelled = true;
     };
-  }, [auth, t]);
+  }, []);
 
   useEffect(() => {
     if (status !== "success") return undefined;
